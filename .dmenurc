@@ -1,6 +1,7 @@
 #
 # ~/.dmenurc
 #
+# dmenurc changed
 
 ## define the font for dmenu to be used
 DMENU_FN="Sans-9"
