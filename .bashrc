@@ -52,3 +52,7 @@ man() {
 	    man "$@"
     }
 ###
+
+# git prompt
+source the /usr/share/git/completion/git-prompt.sh
+PS1='$PS1(__git_ps1 " (%s)")>'
