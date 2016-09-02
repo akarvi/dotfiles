@@ -9,7 +9,7 @@ colors() {
 
 	printf "Color escapes are %s\n" '\e[${value};...;${value}m'
 	printf "Values 30..37 are \e[33mforeground colors\e[m\n"
-	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
+	printf "Values 40..47 are \e[30;43mbackground colors\e[m\n"
 	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
 
 	# foreground colors
@@ -35,24 +35,31 @@ colors() {
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
-# Aliases
-alias alsaequal="alsamixer -D equal"
-# End Aliases
-
-# view colorful manpages within less
 man() {
-	    env \
-	    LESS_TERMCAP_mb=$'\e[01;31m' \
-	    LESS_TERMCAP_md=$'\e[01;31m' \
-	    LESS_TERMCAP_me=$'\e[0m' \
-	    LESS_TERMCAP_se=$'\e[0m' \
-	    LESS_TERMCAP_so=$'\e[01;44;33m' \
-	    LESS_TERMCAP_ue=$'\e[0m' \
-	    LESS_TERMCAP_us=$'\e[01;32m' \
-	    man "$@"
+	env \
+        LESS_TERMCAP_mb=$'\e[01;31m' \
+	LESS_TERMCAP_md=$'\e[01;31m' \
+	LESS_TERMCAP_me=$'\e[0m' \
+	LESS_TERMCAP_se=$'\e[0m' \
+	LESS_TERMCAP_so=$'\e[01;44;33m' \
+	LESS_TERMCAP_ue=$'\e[0m' \
+	LESS_TERMCAP_us=$'\e[01;32m' \
+	man "$@"
     }
+<<<<<<< HEAD
 ###
 
 # git prompt
 source the /usr/share/git/completion/git-prompt.sh
 PS1='$PS1(__git_ps1 " (%s)")>'
+=======
+
+source /usr/share/git/completion/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_STATESEPARATOR=" "
+export GIT_PS1_SHOWCOLORHINTS=1
+export GIT_PS1_SHOWUPSTREAM=auto
+PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[1;35m\]$(__git_ps1 " (%s)")\[\033[01;32m\]]\$\[\033[00m\] '
+>>>>>>> 0d95100a9279a1c6dba4b3689cfd47b1074d9310
