@@ -35,20 +35,17 @@ colors() {
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
-# Aliases
-alias alsaequal="alsamixer -D equal"
-# End Aliases
-
-# view colorful manpages within less
 man() {
-	    env \
-	    LESS_TERMCAP_mb=$'\e[01;31m' \
-	    LESS_TERMCAP_md=$'\e[01;31m' \
-	    LESS_TERMCAP_me=$'\e[0m' \
-	    LESS_TERMCAP_se=$'\e[0m' \
-	    LESS_TERMCAP_so=$'\e[01;44;33m' \
-	    LESS_TERMCAP_ue=$'\e[0m' \
-	    LESS_TERMCAP_us=$'\e[01;32m' \
-	    man "$@"
+	env \
+        LESS_TERMCAP_mb=$'\e[01;31m' \
+	LESS_TERMCAP_md=$'\e[01;31m' \
+	LESS_TERMCAP_me=$'\e[0m' \
+	LESS_TERMCAP_se=$'\e[0m' \
+	LESS_TERMCAP_so=$'\e[01;44;33m' \
+	LESS_TERMCAP_ue=$'\e[0m' \
+	LESS_TERMCAP_us=$'\e[01;32m' \
+	man "$@"
     }
-###
+
+source /usr/share/git/completion/git-prompt.sh
+PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[1;35m\]$(__git_ps1 " (%s)")\[\033[01;32m\]]\$\[\033[00m\] '
