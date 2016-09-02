@@ -62,4 +62,3 @@ export GIT_PS1_STATESEPARATOR=" "
 export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWUPSTREAM=auto
 PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[1;35m\]$(__git_ps1 " (%s)")\[\033[01;32m\]]\$\[\033[00m\] '
->>>>>>> 0d95100a9279a1c6dba4b3689cfd47b1074d9310
