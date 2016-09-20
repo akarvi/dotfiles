@@ -35,6 +35,24 @@ colors() {
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
+# editor: vim
+export EDITOR="/usr/bin/vim"
+
+# aliases
+alias ls="ls -h --color=auto"
+alias la="ls -ah --color=auto"
+alias ll="ls -lh --color=auto"
+alias lla="ls -lha --color=auto"
+alias l="lla"
+alias cnf-lookup="cnf-lookup --colors"
+
+# functions
+function mcd() {
+	mkdir $1
+	cd $1
+}
+
+# man pages colored
 man() {
 	env \
         LESS_TERMCAP_mb=$'\e[01;31m' \
@@ -46,14 +64,8 @@ man() {
 	LESS_TERMCAP_us=$'\e[01;32m' \
 	man "$@"
     }
-<<<<<<< HEAD
-###
 
 # git prompt
-source the /usr/share/git/completion/git-prompt.sh
-PS1='$PS1(__git_ps1 " (%s)")>'
-=======
-
 source /usr/share/git/completion/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
@@ -61,4 +73,4 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_STATESEPARATOR=" "
 export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWUPSTREAM=auto
-PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[1;35m\]$(__git_ps1 " (%s)")\[\033[01;32m\]]\$\[\033[00m\] '
+PS1='\[\033[38;5;166m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1 " (%s)")\[\033[38;5;166m\]]\$\[\033[00m\] '
