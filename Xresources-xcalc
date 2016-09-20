@@ -1,0 +1,5 @@
+XCalc*font:				7x14
+XCalc*ti.button3.font:			7x14
+XCalc*ti.button3.label:			SQRT
+XCalc*ti.button16.font:                 7x14 
+XCalc*ti.button16.label:                Pi
