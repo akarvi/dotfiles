@@ -36,3 +36,5 @@ URxvt*termName: rxvt-unicode-noblink
 in .Xdefaults to make this permanent. You can edit the terminfo file to do other things, e.g. append blink=, to turn off text blinking. (You can also append rmcup=,smcup=, to turn off screen clearing when closing an editor - idea from shallowsky.com.) Ignoring the cursorBlink resource is apparently intentional and the change is described here.
 
 =============================================================================================================
+
+Here: tic rxvt-unicode-noblink.terminfo AND TEST
