@@ -39,17 +39,22 @@ colors() {
 export EDITOR="/usr/bin/vim"
 
 # aliases
-alias ls="ls -h --color=auto"
-alias la="ls -ah --color=auto"
-alias ll="ls -lh --color=auto"
-alias lla="ls -lha --color=auto"
+alias ls="ls -h --group-directories-first --color=auto"
+alias la="ls -ah --group-directories-first --color=auto"
+alias ll="ls -lh --group-directories-first --color=auto"
+alias lla="ls -lha --group-directories-first --color=auto"
 alias l="lla"
+alias lx="l -X"
+alias llx="ll -X"
+alias llax="lla -X"
 alias cnf-lookup="cnf-lookup --colors"
+# alias mutt="offlineimap && mutt && offlineimap"
+alias autolatix="ltx2any -c"
 
 # functions
 function mcd() {
-	mkdir $1
-	cd $1
+	mkdir -p -- "$1" &&
+	cd -P -- "$1"
 }
 
 # man pages colored
@@ -73,4 +78,4 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_STATESEPARATOR=" "
 export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWUPSTREAM=auto
-PS1='\[\033[38;5;166m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1 " (%s)")\[\033[38;5;166m\]]\$\[\033[00m\] '
+PS1='\[\033[38;5;166m\][\u@\h\[\033[01;37m\] \W\[\033[1;36m\]$(__git_ps1 " (%s)")\[\033[38;5;166m\]]\$\[\033[00m\] '
