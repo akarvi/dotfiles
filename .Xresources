@@ -1,35 +1,30 @@
-*background:            #272827
-*foreground:            #657b83
-*fading:                15
-*fadeColor:             black
-*cursorColor:           #16A085
-*pointerColorBackground:#2B2C2B
-*pointerColorForeground:#16A085
+!*background:            #000000
+!*foreground:            #333333
+!*fading:                15
+!*fadeColor:             black
+!*cursorColor:           #16A085
+!*pointerColorBackground:#2B2C2B
+!*pointerColorForeground:#16A085
+*cursorBlink:		false
 
 !! black dark/light
-*color0:                #282928
+*color0:                #000000
 *color8:                #272827
-
 !! red dark/light
 *color1:                #983133
 *color9:                #985F31
-
 !! green dark/light
 *color2:                #1D584D
 *color10:               #16A085
-
 !! yellow dark/light
 *color3:                #5CE022
 *color11:               #63B93D
-
 !! blue dark/light
 *color4:                #001B33
-*color12:               #839496
-
+*color12:               #999966
 !! cyan dark/light
 *color6:                #4F6A98
 *color14:               #2269E0
-
 !! white dark/light
 *color7:                #fdf6e3
 *color15:               #fdf6e3
@@ -44,21 +39,28 @@ Xft.lcdfilter: lcddefault
 Xcursor.theme: Adwaita
 Xcursor.size:  0
 
-XTerm*background: #272827
-XTerm*foreground: #fdf6e3
-XTerm*reverseVideo: on
-XTerm*faceName: Terminus:size=11:antialias=true
+XTerm*background: #000000
+XTerm*foreground: #AAAAAA
+! XTerm*reverseVideo: on
+XTerm*faceName: Terminus:size=10:antialias=true
 XTerm*selectToClipboard: true
+XTerm*allowBoldFonts: false
 
-URxvt.font: 7x14
-URxvt.depth: 32
-URxvt.background: [100]#000000
-URxvt*scrollBar:                      false
-URxvt*mouseWheelScrollPage:           false
-URxvt*cursorBlink:                    false
-URxvt*background:                     black
-URxvt*foreground:                     grey
-URxvt*saveLines:                      5000
+URxvt*font:				7x14
+URxvt*depth:				32
+URxvt*scrollBar:			false
+URxvt*mouseWheelScrollPage:		false
+URxvt*cursorBlink:			false
+URxvt*background:			black
+URxvt*foreground:			grey
+URxvt*saveLines:			5000
+URxvt*perl-ext-common:		 	default,matcher
+URxvt*colorUL:				#00AAFF
+URxvt*url-launcher:			/usr/bin/chromium
+URxvt*matcher.button:			1
+URxvt*boldFont:
+URxvt*italicFont:
+URxvt*boldItalicFont:
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
 ! URxvt*inheritPixmap:                  true
@@ -132,9 +134,9 @@ URxvt*saveLines:                      5000
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
 ! URxvt*font:                           fontname
-URxvt*boldFont:
-URxvt*italicFont:
-URxvt*boldItalicFont:
+! URxvt*boldFont:
+! URxvt*italicFont:
+! URxvt*boldItalicFont:
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name
 ! URxvt*preeditType:                    style
@@ -193,19 +195,26 @@ URxvt*boldItalicFont:
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
- 
-! ------------------------------------------------------------------------------
-! ! ROFI Color theme
-! ! ------------------------------------------------------------------------------
-! Use extended color scheme
-rofi.color-enabled:                  true
-rofi.color-normal:                   argb:00000000, #1aa, argb:11FFFFFF, #1aa,#333
-rofi.color-urgent:                   argb:00000000, #f99, argb:11FFFFFF, #f99,#333
-rofi.color-active:                   argb:00000000, #aa1, argb:11FFFFFF, #aa1,#333
-rofi.color-window:                   argb:ee333333, #1aa,#1aa
-rofi.separator-style:                none
-rofi.bw: 			     1
-rofi.font:			     Cantarell 10
 
+! rofi Use extended color scheme
+rofi.color-enabled:                  	true
+rofi.color-normal:                   	argb:00000000, #1aa, argb:11FFFFFF, #1aa,#333
+rofi.color-urgent:                   	argb:00000000, #f99, argb:11FFFFFF, #f99,#333
+rofi.color-active:                   	argb:00000000, #aa1, argb:11FFFFFF, #aa1,#333
+rofi.color-window:                   	argb:ee333333, #1aa,#1aa
+rofi.separator-style:                	none
+rofi.bw: 			     	1
+rofi.font:			     	Sans 10
 
+! xcalc
+XCalc*background:			#282928
+XCalc*foreground:			white
+XCalc*font:				7x14
+XCalc*ti.button3.font:			7x14
+XCalc*ti.button3.label:			SQRT
+XCalc*ti.button16.font:                 7x14 
+XCalc*ti.button16.label:                Pi
+
+! emacs
+Emacs.cursorBlink:			false
 
