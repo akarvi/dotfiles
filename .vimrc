@@ -34,9 +34,12 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-set smartcase		" do smart search
 set number		" show line numbers
-set cursorline		" show cursor line
+set cursorline		" show cursorline
+setlocal fo+=aw		" format type for mails
+set encoding=utf-8	
+set termencoding=utf-8
+setglobal fileencoding=utf-8
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -78,8 +81,22 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " set 'textwidth' for some filetypes
+autocmd FileType text setlocal textwidth=189
+autocmd FileType tex setlocal textwidth=189
+autocmd FileType sh setlocal textwidth=189
+
+  " set little 80 character markers for longer lines
+augroup collumnLimit
+  autocmd!
+  autocmd BufEnter,WinEnter,FileType c,cpp,py,java,sh
+        \ highlight CollumnLimit ctermbg=DarkGrey guibg=DarkGrey
+  let collumnLimit = 79 " feel free to customize
+  let pattern =
+        \ '\%<' . (collumnLimit+1) . 'v.\%>' . collumnLimit . 'v'
+  autocmd BufEnter,WinEnter,FileType c,cpp,py,java,sh
+        \ let w:m1=matchadd('CollumnLimit', pattern, -1)
+augroup END
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -119,14 +136,18 @@ endif
 " compatible.
 packadd matchit
 
-" colorscheme Tomorrow-Night-Bright
 colorscheme Tomorrow-Night-Bright
-
-" airline
 set laststatus=2
-let g:airline_theme='serene'
+let g:airline_theme='term'
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" vim-latexsuite
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+
+" spell
+set spelllang=de
