@@ -46,7 +46,7 @@ set incsearch		" do incremental searching
 set number		" show line numbers
 set cursorline		" show cursor line
 set hlsearch		" highlight search words
-setlocal fo+=aw         " format type for mails"
+setlocal fo+=aw         " format type for mails
 set encoding=utf-8
 set termencoding=utf-8
 setglobal fileencoding=utf-8
