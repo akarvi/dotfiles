@@ -55,6 +55,7 @@ syntax on
 " textwidth for special filetypes on laptop screen
 autocmd FileType text setlocal textwidth=189                                        
 autocmd FileType tex setlocal textwidth=189
+autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | setlocal textwidth=189 | endif	" set all files without extension to textwidth 189
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
