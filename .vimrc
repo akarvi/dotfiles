@@ -1,34 +1,25 @@
 " set environment
-set runtimepath=~/.vim,~/.vim/bundle,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after,~/.vim/bundle/vim-javacomplete2
+set runtimepath=~/.vim,~/.vim/plugged,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
-" Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" be iMproved
+set nocompatible
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" vim-plug
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" Plugins below
-Plugin 'tpope/vim-fugitive'
-Plugin 'http://github.com/vim-airline/vim-airline'
-Plugin 'http://github.com/vim-airline/vim-airline-themes'
-Plugin 'https://github.com/Raimondi/delimitMate'
-Plugin 'http://github.com/Valloric/YouCompleteMe'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
+Plug 'https://github.com/Raimondi/delimitMate'
+Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/octol/vim-cpp-enhanced-highlight'
+Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
+
+call plug#end()
+" end vim-plug
+
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-" Put your non-Plugin stuff after this line
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -46,6 +37,11 @@ set incsearch		" do incremental searching
 set number		" show line numbers
 set cursorline		" show cursor line
 set hlsearch		" highlight search words
+set nostartofline
+set wildmenu
+set wildmode=longest:full,full
+set pastetoggle=<Ins>
+
 setlocal fo+=aw         " format type for mails
 set encoding=utf-8
 set termencoding=utf-8
@@ -69,7 +65,7 @@ endif
 colorscheme Tomorrow-Night-Bright
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_extra_conf_vim_data=['&filetype']
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
