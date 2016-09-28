@@ -1,54 +1,34 @@
-" set environment
-set runtimepath=~/.vim,/.vim/bundle,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after,.vim/bundle/vim-javacomplete2
+	" set environment
+set runtimepath=~/.vim,~/.vim/plugged,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
-" Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" be iMproved
+set nocompatible
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" vim-plug
+call plug#begin('~/.vim/plugged')
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
-Plugin 'http://github.com/vim-airline/vim-airline'
-Plugin 'http://github.com/vim-airline/vim-airline-themes'
-Plugin 'https://github.com/Raimondi/delimitMate'
-Plugin 'http://github.com/wsdjeg/vim-javacomplete2'
-" Plugin 'http://github.com/Valloric/YouCompleteMe'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
+Plug 'https://github.com/Raimondi/delimitMate'
+Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/octol/vim-cpp-enhanced-highlight'
+Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
+Plug 'https://github.com/wsdjeg/vim-javacomplete2'
+Plug 'https://github.com/scrooloose/syntastic'
+Plug 'https://github.com/idanarye/vim-vebugger'
+Plug 'https://github.com/Shougo/vimproc.vim', {'do' : 'make'}
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
+" end vim-plug
+
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line	    
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -65,6 +45,25 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set number		" show line numbers
 set cursorline		" show cursor line
+set hlsearch		" highlight search words
+set nostartofline
+set wildmenu
+set wildmode=longest:full,full
+set pastetoggle=<Ins>
+set foldmethod=indent
+set foldlevel=99
+
+setlocal fo+=aw         " format type for mails
+set encoding=utf-8
+set termencoding=utf-8
+setglobal fileencoding=utf-8
+let python_highlight_all=1
+syntax on
+
+" textwidth for special filetypes on laptop screen
+autocmd FileType text setlocal textwidth=189                                        
+autocmd FileType tex setlocal textwidth=189
+autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | setlocal textwidth=189 | endif	" set all files without extension to textwidth 189
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -74,14 +73,11 @@ if has('mouse')
   set mouse=a
 endif
 
-syntax on
-set hlsearch
-
 " colorscheme Tomorrow-Night-Bright
 colorscheme Tomorrow-Night-Bright
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf='/home/alex/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_extra_conf_vim_data=['&filetype']
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -91,8 +87,9 @@ set laststatus=2
 let g:airline_theme='serene'
 
 " vim-latexsuite
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor = "latex"
+" set grepprg=grep\ -nH\ $*
+" let g:tex_flavor = "latex"
+" let g:plaintex_delimiters = 1
 
 " spell check
 set spelllang=de 
@@ -104,3 +101,13 @@ let delimitMate_expand_cr = 1
 let g:JavaComplete_JavaCompiler='/usr/lib/jvm/java-8-openjdk/bin/javac'
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
