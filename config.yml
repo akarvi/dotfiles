@@ -1,0 +1,12 @@
+ignore_device:
+
+  # .config/udiskie/config.yml
+  # Customize udiskie's ignore rules. This config entry has the
+  # same structure as *mount_options*, the only difference being
+  # that the action is defined by the 'ignore' field which is a
+  # boolean defaulting to true. The rules defined here are simply
+  # prepended to the builtin ignore rules, so that it is possible
+  # to completely overwrite the defaults by specifying a catch-all
+  # rule.
+  
+- device_file: /dev/fd0   
