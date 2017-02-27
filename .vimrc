@@ -101,10 +101,6 @@ set spelllang=de
 " delimitMate
 let delimitMate_expand_cr = 1
 
-" javacomplete2
-let g:JavaComplete_JavaCompiler='/usr/lib/jvm/java-8-openjdk/bin/javac'
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
