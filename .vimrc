@@ -16,19 +16,15 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/Raimondi/delimitMate'
-" Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': './install.py 
-"--clang-completer' }
 Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/octol/vim-cpp-enhanced-highlight'
 Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
-" Plug 'https://github.com/wsdjeg/vim-javacomplete2'
 Plug 'https://github.com/scrooloose/syntastic'
 Plug 'https://github.com/idanarye/vim-vebugger'
 Plug 'https://github.com/Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'https://github.com/mattn/emmet-vim.git'
 Plug 'https://github.com/Shougo/neocomplete.vim'
 Plug 'https://github.com/lervag/vimtex'
-" Plug 'https://github.com/tomasr/molokai'
 
 call plug#end()
 " end vim-plug
@@ -45,10 +41,10 @@ else
   set undofile		" keep an undo file (undo changes after closing)
 endif
 set history=10000	" keep 10000 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+set ruler			" show the cursor position all the time
+set showcmd			" display incomplete commands
 set incsearch		" do incremental searching
-set number		" show line numbers
+set number			" show line numbers
 set cursorline		" show cursor line
 set hlsearch		" highlight search words
 set nostartofline
@@ -93,21 +89,9 @@ endif
 " colorscheme 
 colorscheme molokai
 
-" YouCompleteMe
-"let 
-"g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-"let g:ycm_extra_conf_vim_data=['&filetype']
-"let g:ycm_autoclose_preview_window_after_completion=1
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " airline
 set laststatus=2
 let g:airline_theme='serene'
-
-" vim-latexsuite
-" set grepprg=grep\ -nH\ $*
-" let g:tex_flavor = "latex"
-" let g:plaintex_delimiters = 1
 
 " spell check
 set spelllang=de 
