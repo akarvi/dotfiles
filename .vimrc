@@ -1,4 +1,3 @@
-" VIM - config file
 " set environment
 set runtimepath=~/.vim,~/.vim/plugged,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
