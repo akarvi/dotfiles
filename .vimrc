@@ -87,13 +87,13 @@ if has('mouse')
   set mouse=a
 endif
 
-" colorscheme 
-colorscheme molokai
-hi Normal ctermbg=black
-
 " airline
 set laststatus=2
 let g:airline_theme='serene'
+
+" colorscheme 
+colorscheme molokai
+hi Normal ctermbg=black
 
 " spell check
 set spelllang=de 
