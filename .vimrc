@@ -89,6 +89,7 @@ endif
 
 " colorscheme 
 colorscheme molokai
+hi Normal ctermbg=black
 
 " airline
 set laststatus=2
