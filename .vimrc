@@ -28,7 +28,7 @@ Plug 'https://github.com/Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'https://github.com/mattn/emmet-vim.git'
 Plug 'https://github.com/Shougo/neocomplete.vim'
 Plug 'https://github.com/lervag/vimtex'
-Plug 'https://github.com/tomasr/molokai'
+" Plug 'https://github.com/tomasr/molokai'
 
 call plug#end()
 " end vim-plug
