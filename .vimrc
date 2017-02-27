@@ -1,4 +1,4 @@
-	" set environment
+" set environment
 set runtimepath=~/.vim,~/.vim/plugged,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 " be iMproved
@@ -16,14 +16,19 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/Raimondi/delimitMate'
-Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+" Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': './install.py 
+"--clang-completer' }
 Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/octol/vim-cpp-enhanced-highlight'
 Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
-Plug 'https://github.com/wsdjeg/vim-javacomplete2'
+" Plug 'https://github.com/wsdjeg/vim-javacomplete2'
 Plug 'https://github.com/scrooloose/syntastic'
 Plug 'https://github.com/idanarye/vim-vebugger'
 Plug 'https://github.com/Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'https://github.com/mattn/emmet-vim.git'
+Plug 'https://github.com/Shougo/neocomplete.vim'
+Plug 'https://github.com/lervag/vimtex'
+Plug 'https://github.com/tomasr/molokai'
 
 call plug#end()
 " end vim-plug
@@ -53,12 +58,24 @@ set pastetoggle=<Ins>
 set foldmethod=indent
 set foldlevel=99
 
+set ts=4
+set shiftwidth=4 
+
 setlocal fo+=aw         " format type for mails
 set encoding=utf-8
 set termencoding=utf-8
 setglobal fileencoding=utf-8
 let python_highlight_all=1
 syntax on
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" toggle search highlighting
+nnoremap <silent><expr> <F3> (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 " textwidth for special filetypes on laptop screen
 autocmd FileType text setlocal textwidth=189                                        
@@ -73,14 +90,15 @@ if has('mouse')
   set mouse=a
 endif
 
-" colorscheme Tomorrow-Night-Bright
-colorscheme Tomorrow-Night-Bright
+" colorscheme 
+colorscheme molokai
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_extra_conf_vim_data=['&filetype']
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let 
+"g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_extra_conf_vim_data=['&filetype']
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " airline
 set laststatus=2
@@ -111,3 +129,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Emmet HTML CSS
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" NeoComplete
+let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_smart_case = 1
