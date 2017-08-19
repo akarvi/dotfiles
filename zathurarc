@@ -1,4 +1,4 @@
-map <Left> navigate next
-map <Right> navigate previous
-map [fullscreen] <Left> navigate next
-map [fullscreen] <Right> navigate previous
+map <Left> navigate previous
+map <Right> navigate next
+map [fullscreen] <Left> navigate previous
+map [fullscreen] <Right> navigate next
