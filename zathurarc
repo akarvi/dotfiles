@@ -1,0 +1,4 @@
+map <Left> navigate next
+map <Right> navigate previous
+map [fullscreen] <Left> navigate next
+map [fullscreen] <Right> navigate previous
