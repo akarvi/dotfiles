@@ -1,37 +1,47 @@
+8bit (Roland Radio 64K OGG Stereo),http://dir.xiph.org/listen/3768675/listen.m3u
 Alternative (BAGeL Radio - SomaFM),http://somafm.com/bagel.pls
 Alternative (The Alternative Project),http://c9.prod.playlists.ihrhls.com/4447/playlist.m3u8
-Ambient (Deep Space One - SomaFM),https://somafm.com/deepspaceone.pls
-Ambient (DEF CON Radio - SomaFM),https://somafm.com/defcon.pls
-Ambient (Mission Control - SomaFM),https://somafm.com/missioncontrol.pls
-Ambient (Space Station - SomaFM),https://somafm.com/spacestation.pls
-#Ambient (The Silent Channel - SomaFM),https://somafm.com/silent.pls
 Ambient (Ambient Radio.org),http://uk2.internet-radio.com:31491/listen.pls
+Ambient (Buddhapillow Radio),http://uk3.internet-radio.com:8399/live.m3u
+Ambient (DEF CON Radio - SomaFM),https://somafm.com/defcon.pls
+Ambient (Deep Space One - SomaFM),https://somafm.com/deepspaceone.pls
+Ambient (Deep Space One - SomaFM),https://somafm.com/deepspaceone130.pls
+Ambient (Healing Music Radio),http://us3.internet-radio.com:8169/live.m3u
+Ambient (Mission Control - SomaFM),https://somafm.com/missioncontrol130.pls
+Ambient (Party Vibe Radio),http://www.partyviberadio.com:8056/listen.pls
+Ambient (SF 10-33 - SomaFM),http://somafm.com/sf1033.pls
+Ambient (Space Station - SomaFM),https://somafm.com/spacestation.pls
 American Roots (Boot Liquor - SomaFM),http://somafm.com/bootliquor.pls
 Celtic (ThistleRadio - SomaFM),http://somafm.com/thistle.pls
 Chillout (Drone Zone - SomaFM),https://somafm.com/dronezone.pls
 Chillout (Groove Salad - SomaFM),http://somafm.com/startstream=groovesalad.pls
-Commodore 64 Remixes (Scenesat),https://scenesat.com/listen/normal/max.m3u
+Classic (ArpeggioRadio),http://159.8.16.16:7113/listen.pls
+Classic (Davide of MIMIC),http://uk3.internet-radio.com:8060/listen.pls
+Classic (Radio Tesla),http://us4.internet-radio.com:8235/listen.pls
+Classic (Venice Classic Radio Italia),http://174.36.206.197:8000/listen.pls
 Commodore 64 Remixes (SIDStation),http://185.80.220.12:2199/tunein/jotayl00.pls
+Commodore 64 Remixes (Scenesat),https://scenesat.com/listen/normal/max.m3u
 Commodore 64 Remixes (Slay Radio),http://www.slayradio.org/tune_in.php/128kbps/listen.m3u
 Commodore Remixes (Commodexplorer),http://listen.radionomy.com/commodexplorer.m3u
 Covers (SomaFM),http://somafm.com/covers.pls
 Downtempo (Secret Agent - SomaFM),http://somafm.com/secretagent.pls
 Dub Step (Dub Step Beyond - SomaFM),http://somafm.com/dubstep.pls
 Electronic/Dance (Electronic Culture),http://www.shouted.fm/tunein/electro-dsl.m3u
-# Find lots more stations at http://www.iheart.com,
 Folk (Folk Forward - SomaFM),http://somafm.com/folkfwd.pls
 House (Beat Blender - SomaFM),http://somafm.com/startstream=beatblender.pls
 Indie (Indie Pop Rocks! - SomaFM),http://somafm.com/indiepop130.pls
 Indie (Underground 80s - SomaFM),https://somafm.com/u80s.pls
 Intelligent dance music (Cliq Hop - SomaFM),http://somafm.com/startstream=cliqhop.pls
+Jazz (Smooth Jazz Global HD),http://uk7.internet-radio.com:8119/listen.pls
 Jazz (Sonic Universe - SomaFM),http://somafm.com/startstream=sonicuniverse.pls
-Lokal (coloRadio Dresden),http://hub.fueralle.org/coloradio160ogg.m3u
-Lokal (Radio Blau Leipzig),http://www.radioblau.de/stream/radioblau.m3u
-Lokal (Ostseewelle),http://edge.live.mp3.mdn.newmedia.nacamar.net/ostseewellelive/livestream.mp3
+Local (Ostseewelle),http://edge.live.mp3.mdn.newmedia.nacamar.net/ostseewellelive/livestream.mp3
+Local (Radio Blau Leipzig),http://www.radioblau.de/stream/radioblau.m3u
+Local (coloRadio Dresden),http://hub.fueralle.org/coloradio160ogg.m3u
 Lounge (Illinois Street Lounge - SomaFM),http://somafm.com/illstreet.pls
 Metal (Metal Detector - SomaFM),https://somafm.com/metal.pls
 Mix (EldoRadio),http://sender.eldoradio.de:8000/128.mp3
 Mix (MoozFM),http://www.moozfm.com/MoozFM-128aac.m3u
+News (Deutschlandfunk),http://st01.dlf.de/dlf/01/104/ogg/stream.ogg
 News (MDR Info),http://avw.mdr.de/livestreams/mdr_aktuell_live_128.pls
 Pop (PopTron! - SomaFM),http://somafm.com/poptron.pls
 Pop/Rock/Urban  (Frequence 3 - Paris) ,http://streams.frequence3.net/hd-mp3.m3u
@@ -39,5 +49,5 @@ Progressive (Tags Trance Trip - SomaFM),http://somafm.com/tagstrance.pls
 Reggae Dancehall (Ragga Kings),http://www.raggakings.net/listen.m3u
 Rock (Digitalis - SomaFM),http://somafm.com/digitalis.pls
 Rock (Radio Bob!),http://streams.radiobob.de/bob-live/mp3-192/mediaplayer
-Smooth Jazz (Smooth Jazz Global HD),http://uk7.internet-radio.com:8119/listen.pls
 Soul (Lush - SomaFM),https://somafm.com/lush.pls
+World Music (Suburbs of Goa - SomaFM),https://somafm.com/suburbsofgoa130.pls
