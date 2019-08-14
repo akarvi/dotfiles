@@ -1,22 +1,21 @@
 #
 # ~/.dmenurc
 #
-# dmenurc changed
 
 ## define the font for dmenu to be used
-DMENU_FN="Sans-9"
+DMENU_FN="Sans-8"
 
 ## background colour for unselected menu-items
-DMENU_NB="#2B2C2B"
+DMENU_NB="#272B34"
 
 ## textcolour for unselected menu-items
-DMENU_NF="#F9FAF9"
+DMENU_NF="#0BA8E0"
 
 ## background colour for selected menu-items
-DMENU_SB="#16A085"
+DMENU_SB="#0BA8E0"
 
 ## textcolour for selected menu-items
-DMENU_SF="#F9FAF9"
+DMENU_SF="#272B34"
 
 ## command for the terminal application to be used:
 TERMINAL_CMD="terminal -e"
